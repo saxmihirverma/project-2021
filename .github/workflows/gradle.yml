@@ -29,8 +29,7 @@ jobs:
       run: ./gradlew build
       working-directory: ${{env.working-directory}}
     - name: Build docker Image
-      id: buildAndPushImage
-      working-directory: ${{env.working-directory}}      
+      id: buildAndPushImage      
       uses: Abhishek-070/Dockerhub-build-push@v1.0
       with:
         registry_url: 'docker.io'
