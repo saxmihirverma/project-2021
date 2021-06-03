@@ -30,6 +30,7 @@ jobs:
       working-directory: ${{env.working-directory}}
     - name: Build docker Image
       id: buildAndPushImage
+      working-directory: ${{env.working-directory}}      
       uses: Abhishek-070/Dockerhub-build-push@v1.0
       with:
         registry_url: 'docker.io'
@@ -38,8 +39,6 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         image_version: 'v1.0'
         docker_file: '.'
-      working-directory: ${{env.working-directory}}
     - name: Get pre step result output image_pull_url
       run: echo "the time was ${{ steps.buildandPushimage.outputs.image_pull_url }}"
       working-directory: ${{env.working-directory}}
-      
