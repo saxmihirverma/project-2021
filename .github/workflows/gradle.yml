@@ -14,7 +14,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      working-directory: ./project-2021
+      working-directory: ./project_2021
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
@@ -28,4 +28,3 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
       working-directory: ${{env.working-directory}}
-      
